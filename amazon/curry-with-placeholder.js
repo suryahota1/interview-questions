@@ -11,6 +11,7 @@ function curry(fn) {
     function mergeArgs ( args , nextArgs ) {
       const newArgs = [...args];
       let nextPtr = 0;
+      
       for ( let i = 0; i < newArgs.length && nextPtr < nextArgs.length; i++ ) {
         if ( newArgs[i] === curry.placeholder ) {
           newArgs[i] = nextArgs[nextPtr++];
